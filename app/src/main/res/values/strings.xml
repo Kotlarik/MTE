@@ -1,23 +1,23 @@
 <resources>
-    <string name="app_name">Translator</string>
+    <string name="app_name">Překladač</string>
     <!-- tab navigation menu -->
-    <string name="home">Home</string>
-    <string name="history">History</string>
-    <string name="dictionary">Dictionary</string>
+    <string name="home">Domů</string>
+    <string name="history">Historie</string>
+    <string name="dictionary">Slovník</string>
     <!-- home screen -->
-    <string name="language_input">Input Language</string>
-    <string name="language_output">Output Language</string>
-    <string name="translate">Translate</string>
-    <string name="show">Show</string>
-    <string name="add_to_dictionary">Add to dictionary</string>
-    <string name="translation_hint">Text for translation...</string>
+    <string name="language_input">Přeložit z ...</string>
+    <string name="language_output">Přeložit do ...</string>
+    <string name="translate">Překlad</string>
+    <string name="show">Ukázat</string>
+    <string name="add_to_dictionary">Vložit do slovníku</string>
+    <string name="translation_hint">Text pro překlad...</string>
     <!-- arrays -->
     <string-array name="languages">
-        <item>Czech</item>
-        <item>English</item>
-        <item>Deutch</item>
-        <item>French</item>
-        <item>Slovak</item>
+        <item>Čeština</item>
+        <item>Angličtina</item>
+        <item>Němčina</item>
+        <item>Francouzština</item>
+        <item>Slovenština</item>
     </string-array>
 
     <string-array name="languages_abbr">

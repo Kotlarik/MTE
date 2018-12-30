@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerViewHistory;
     private RecyclerView.Adapter mHistoryAdapter;
 
-
     private List<String> mHistory;
     private List<String> mDictionary;
 
@@ -48,17 +47,14 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(0);
         mViewPager.setOffscreenPageLimit(2);
         mTabLayout = (TabLayout)findViewById(R.id.tableLayout);
-// adds view pager into tab layout
+// pridava zobrazeni pageru do tab layout
         mTabLayout.setupWithViewPager(mViewPager);
         new PageHome(this);
         new PageDictionary(this);
         textView=(TextView)findViewById(R.id.TEST);
         textView.setMovementMethod(new ScrollingMovementMethod());
 
-
-
-
-        //set history recycler view
+        //nastaveni zobrazeni historie
         mRecyclerViewHistory = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerViewHistory.setHasFixedSize(true);
         LinearLayoutManager mLayoutManagerHistory = new LinearLayoutManager(this);
@@ -67,10 +63,6 @@ public class MainActivity extends AppCompatActivity {
         mHistoryAdapter = new HistoryAdapter(mHistory);
 
         mRecyclerViewHistory.setAdapter(mHistoryAdapter);
-
-
-
-
     }
 
     public List<String> getHistoryList() {
@@ -86,9 +78,6 @@ public class MainActivity extends AppCompatActivity {
     public RecyclerView.Adapter returnHistoryAdapter () {
         return mHistoryAdapter;
     }
-
-
-
 
     public void writeToFile(String FileName, String saveText) {
         try {
@@ -113,17 +102,12 @@ public class MainActivity extends AppCompatActivity {
             while ((lines=bufferedReader.readLine())!=null) {
                 stringBuffer.append(lines + "\n");
             }
-
                 textView.setText(stringBuffer.toString());
-
-
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

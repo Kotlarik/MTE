@@ -42,7 +42,6 @@ public class PageHome implements View.OnClickListener{
     private HashMap<String,String> pokus;
 
     //private Map<String,List<String>> mDictionary = new HashMap<String, List<String>>();
-
     public PageHome(MainActivity activity){
         mActivity = activity;
         mTranslate = (Button)activity.findViewById(R.id.btnTranslate);
@@ -51,15 +50,14 @@ public class PageHome implements View.OnClickListener{
         mTranslate.setOnClickListener(this);
         mAddToDictionary.setOnClickListener(this);
         mInputSpinner = (Spinner)activity.findViewById(R.id.inputSpinner);
-// set default value - Czech
+// vychozi nastaveni - Cestina
         mInputSpinner.setSelection(0);
         mOutputSpinner = (Spinner)activity.findViewById(R.id.outputSpinner);
-// set default value - English
+// vychozi nastaveni - Anglictina
         mOutputSpinner.setSelection(1);
         mAbbrs = activity.getResources().getStringArray(R.array.languages_abbr);
         mResult = (TextView)activity.findViewById(R.id.tvResult);
         mEditText = (EditText) activity.findViewById(R.id.etTranslate);
-
     }
     @Override
     public void onClick(View view) {
@@ -71,9 +69,9 @@ public class PageHome implements View.OnClickListener{
             case R.id.btnTranslate:
 
                 if (translatedText.isEmpty()) {
-// empty text
+// prazdny text
                 } else {
-// we have translated text from user input
+// prelozeny text z uzivatelskeho vstupu
                     Log.v("transApp", translatedText);
                     ApiInterface apiService =
                             ApiClient.getClient().create(ApiInterface.class);
@@ -109,8 +107,6 @@ private class MyCall implements Callback<ResponseTranslator>
             mHistory.add(mTranslatedText + " >> " + data.getTranslatedText());
             RecyclerView.Adapter mAdapterHistory = mActivity.returnHistoryAdapter();
             mAdapterHistory.notifyDataSetChanged();
-
-
         }
     }
     @Override

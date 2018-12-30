@@ -9,11 +9,10 @@ public class ApiClient {
     private static Retrofit retrofit = null;
     private static OkHttpClient.Builder getHttpClient(){
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-// set your desired log level
+// nastavi pozadovanou uroven levelu
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-// add your other interceptors …
-// add logging as last interceptor
+// nastavi dalsi interceptory …
         httpClient.addInterceptor(logging); // <-- this is the important line!
         httpClient.connectTimeout(30, TimeUnit.SECONDS);
         httpClient.writeTimeout(30, TimeUnit.SECONDS);

@@ -108,7 +108,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginLeft="10dp"
             android:lines="6"
-            android:text="Dictionary..."
+            android:text="Slovník..."
             android:textAppearance="?android:attr/textAppearance"
             android:maxLines = "100"
             android:scrollbars = "vertical"/>
